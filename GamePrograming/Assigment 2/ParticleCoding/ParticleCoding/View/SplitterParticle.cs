@@ -22,7 +22,7 @@ namespace ParticleCoding.View
 
         public SplitterParticle(Random rand)
         {
-            direction = new Vector2((float)rand.NextDouble() * maxSpeed);
+            direction = new Vector2((float)rand.NextDouble() - 0.5f, (float)rand.NextDouble() - 0.5f);
             direction.Normalize();
             direction = direction * ((float)rand.NextDouble() * maxSpeed);
 

@@ -16,7 +16,7 @@ namespace ParticleCoding.View
             this.device = device;
         }
 
-        public Vector2 getExposionOrgin()
+        public Vector2 getExposionOrigin()
         {
             return new Vector2(this.device.Viewport.Width / 2, this.device.Viewport.Height / 2);
         }
@@ -24,14 +24,13 @@ namespace ParticleCoding.View
         public Vector2 getVisualCords(Vector2 logicPos)
         {
             float x = logicPos.X * device.Viewport.Width;
-            float y = logicPos.X * device.Viewport.Height;
-
+            float y = logicPos.Y * device.Viewport.Height;
             return new Vector2(x, y);
         }
 
         public Vector2 getParticleVisualCord(Vector2 particlePos)
         {
-            return getExposionOrgin() + getVisualCords(particlePos);
+            return getExposionOrigin() + getVisualCords(particlePos);
         }
     }
 }
