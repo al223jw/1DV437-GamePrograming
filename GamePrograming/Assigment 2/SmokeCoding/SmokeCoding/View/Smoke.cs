@@ -71,6 +71,11 @@ namespace SmokeCoding.View
             {
                 timeLived += timeEffect;
 
+                position.X += direction.X * timeEffect * speedModifier;
+                position.Y += direction.Y * timeEffect * speedModifier;
+
+                rotation += rotationSpeed * timeEffect;
+
                 float lifePercent = timeLived / maxTimeToLive;
 
                 fade = 1f - lifePercent;
