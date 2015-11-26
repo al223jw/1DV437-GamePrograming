@@ -24,3 +24,5 @@ D:\Visual Studio\Projects\ExplotionCoding\ExplotionCoding\bin\Windows\Debug\Shar
 D:\Visual Studio\Projects\ExplotionCoding\ExplotionCoding\obj\x86\Debug\ExplotionCoding.exe
 D:\Visual Studio\Projects\ExplotionCoding\ExplotionCoding\obj\x86\Debug\ExplotionCoding.pdb
 D:\Visual Studio\Projects\ExplotionCoding\ExplotionCoding\bin\Windows\Debug\Content\explosion.png
+C:\Users\Anton\Documents\GitHub\1DV437-GamePrograming\GamePrograming\Assigment 2\ExplotionCoding\ExplotionCoding\obj\x86\Debug\ExplotionCoding.exe
+C:\Users\Anton\Documents\GitHub\1DV437-GamePrograming\GamePrograming\Assigment 2\ExplotionCoding\ExplotionCoding\obj\x86\Debug\ExplotionCoding.pdb
