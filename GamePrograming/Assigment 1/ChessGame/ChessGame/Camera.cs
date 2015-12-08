@@ -10,11 +10,13 @@ namespace ChessGame
     class Camera
     {
         private GraphicsDevice device;
+        private ChessModel chessModel;
+        //values for the chessboard size and tile sizes
         private int chessBackgroundSizeX;
         private int chessBackgroundSizeY;
         private int tileSizeX;
         private int tileSizeY;
-        private ChessModel chessModel;
+        
 
         public Camera(GraphicsDevice device, ChessModel chessModel)
         {
@@ -23,20 +25,23 @@ namespace ChessGame
             UpdateResolutionValues();
         }
 
+        //returns a Rectangle obj containg background cords and size.
         public Rectangle GetBackgroundVectorPos()
         {
             return new Rectangle(0, 0, chessBackgroundSizeX, chessBackgroundSizeY);
         }
 
+        //returns a Rectangle obj containg tile cords and size.
         internal Rectangle GetVisualCords(int x, int y)
         {
+            //origin Pos is the cords for the top left square. (position of background + pixel indent.)
             Rectangle originPos = GetBackgroundVectorPos();
             originPos.X += tileSizeX;
             originPos.Y += tileSizeY;
 
             Rectangle TitePosition;
 
-            if (this.chessModel.IsTableTurned)
+            if (!this.chessModel.IsTableTurned)
             {
                 TitePosition = new Rectangle(tileSizeX * x + originPos.X, tileSizeY * y + originPos.Y, tileSizeX, tileSizeY);
             }
@@ -48,6 +53,7 @@ namespace ChessGame
             return TitePosition;
         }
 
+        //updates the game device with the new game window values.
         public void UpdateGameResolution(GraphicsDevice device)
         {
             this.device = device;

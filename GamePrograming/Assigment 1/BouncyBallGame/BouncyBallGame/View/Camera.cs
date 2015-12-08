@@ -30,6 +30,7 @@ namespace BouncyBallGame.View
             this.device = device;
         }
 
+        //Returns a vector2 whit the visual coordinates for a wall. 
         public Vector2 GetWallVisualCord(Vector2 StartDrawPoint)
         {
             float x;
@@ -53,18 +54,21 @@ namespace BouncyBallGame.View
             return new Vector2(x, y);
         }
 
+        //returns a vector2 of the scale for a vertical wall
         public Vector2 GetVerticalWallScale(Texture2D wall)
         {
             float scale = (device.Viewport.Height - (float)Dissort * 2) / wall.Bounds.Height;
             return new Vector2(1, scale);
         }
 
+        //returns a vector2 of the scale for a horizontal wall
         public Vector2 GetHorizontalWallScale(Texture2D wall)
         {
             float scale = (device.Viewport.Width - (float)Dissort * 2) / wall.Bounds.Width;
             return new Vector2(scale, 1);
         }
 
+        //returns a vector2 of the ball scale(depends on resolution)
         public Vector2 GetBallScale(Texture2D ballTexture, Ball ball)
         {
             float x = ((device.Viewport.Width - (float)Dissort * 2) * ball.BallLogicDiameter) / ballTexture.Bounds.Width;
@@ -72,6 +76,7 @@ namespace BouncyBallGame.View
             return new Vector2(x, y);
         }
 
+        //returns a vector2 with the balls logical cord
         public Vector2 GetBallVisualCord(Texture2D ballTexture, Ball ball)
         {
             Vector2 a = new Vector2(0.073f, 0.03f);

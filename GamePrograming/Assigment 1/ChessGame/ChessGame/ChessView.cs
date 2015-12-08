@@ -44,9 +44,10 @@ namespace ChessGame
             {
                 if (everyOther)
                 {
-
+                    //draw white
                     spriteBatch.Draw(ChessWhiteSquare, camera.GetVisualCords(tileCords[0], tileCords[1]), Color.White);
 
+                    //if the x value is 7, then it will be a new row, the same tile needs to be painted again.
                     if (!(tileCords[0] == 7))
                     {
                         everyOther = false;
@@ -54,6 +55,7 @@ namespace ChessGame
                 }
                 else
                 {
+                    //draw black
                     spriteBatch.Draw(ChessBlackSquare, camera.GetVisualCords(tileCords[0], tileCords[1]), Color.White);
 
                     if (!(tileCords[0] == 7))

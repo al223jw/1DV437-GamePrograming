@@ -25,6 +25,7 @@ namespace BouncyBallGame.View
             camera = new Camera(device, ballSimulation.WallThickness, ballSimulation.Dissort);
             this.ballSimulation = ballSimulation;
 
+            //Loads all the pictures
             LoadGraphics(content);
         }
 
@@ -33,6 +34,7 @@ namespace BouncyBallGame.View
         {
             spriteBatch.Begin();
 
+            //GetWallVisualCord take a Vextor2 as argument, the vectors X and Y values represent the starting point of the drawn picture (aka the top left corner.)
             spriteBatch.Draw(VerticalWall, camera.GetWallVisualCord(ballSimulation.WestWall), null, Color.White, 0, new Vector2(0, 0), camera.GetVerticalWallScale(VerticalWall), SpriteEffects.None, 0f);
            
             spriteBatch.Draw(VerticalWall, camera.GetWallVisualCord(ballSimulation.EastWall), null, Color.White, 0, new Vector2(0, 0), camera.GetVerticalWallScale(VerticalWall), SpriteEffects.None, 0f);

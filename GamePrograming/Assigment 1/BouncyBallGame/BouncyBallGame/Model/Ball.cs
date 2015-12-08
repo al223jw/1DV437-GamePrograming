@@ -37,11 +37,14 @@ namespace BouncyBallGame.Model
 
         public void UpdateLocation(float time)
         {
+            //time is divided by 1000 since it's value is in milliseconds and I count speed as speed in seconds
             time /= 1000; // miliseconds
             ballLogicCords.X += time * ballLogicSpeedX;
             ballLogicCords.Y += time * ballLogicSpeedY;
         }
 
+        //Changes the speed aswell as the direction in the horizontal direction. 
+        //also sets the Y Cords of the ball to the place of collision
         public void CollisionHorizontalWall(float minDistance)
         {
             float NewSpeed = GenerateRandomSpeed();
@@ -59,6 +62,8 @@ namespace BouncyBallGame.Model
             ballLogicCords.Y = minDistance;
         }
 
+        //Changes the speed aswell as the direction in the vertical direction. 
+        //also sets the X Cords of the ball to the place of collision
         public void CollisionVerticalWall(float minDistance)
         {
             float NewSpeed = GenerateRandomSpeed();
@@ -76,6 +81,7 @@ namespace BouncyBallGame.Model
             ballLogicCords.X = minDistance;
         }
 
+        //returns a random logic coordinate between 0.1 and 0.9
         private Vector2 GenerateRandomLogicCords()
         {
             Random rnd = new Random();
